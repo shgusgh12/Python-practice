@@ -5,3 +5,4 @@ b = list(aSet)
 
 
 print(b)
+print(a)
