@@ -29,3 +29,10 @@ else:
 #for 반복문
 for asdf in range(10):
     print(asdf)
+
+#이중 for문 별찍기
+
+for i in range(10,0,-1):
+    for j in range(i):
+        print("*", end='')
+    print("")
