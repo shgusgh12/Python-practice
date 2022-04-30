@@ -42,4 +42,8 @@ for i in range(10,0,-1):
 lst = ['A','B','C','D','E']
 for i in range(len(lst)):
     print(lst[i], end='\t')
+print("")
 
+#반대로 출력시 lst[처음인덱스:어디까지출력할건지:출력방향및간격 :]
+for i in lst[0:3:1]:
+    print(i, end=' ')
