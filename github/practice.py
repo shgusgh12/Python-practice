@@ -36,3 +36,10 @@ for i in range(10,0,-1):
     for j in range(i):
         print("*", end='')
     print("")
+
+
+#리스트 end 옵션에 \t 추가하면 tab 된 상태로 출력
+lst = ['A','B','C','D','E']
+for i in range(len(lst)):
+    print(lst[i], end='\t')
+
