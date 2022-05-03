@@ -44,6 +44,33 @@ for i in range(len(lst)):
     print(lst[i], end='\t')
 print("")
 
-#반대로 출력시 lst[처음인덱스:어디까지출력할건지:출력방향및간격 :]
-for i in lst[0:3:1]:
-    print(i, end=' ')
+# #반대로 출력시 lst[처음인덱스:어디까지출력할건지:출력방향및간격 :]
+# for i in lst[0:3:1]:
+#     print(i, end=' ')
+
+#리스트 안의 리스트 값 출력
+a = [100, 3.14, 'korea', [100, 200,300], (100, 200 ,300)]
+print(a[4][2])
+
+for i in range(len(a)):
+    print(a[i], end=' ')
+print()
+
+
+#정렬 sort() 함수 사용
+b = [4,2,5,2,4]
+# b.sort(reverse=True) #내림차순
+# for i in range(len(b)):
+#     print(b[i])
+
+for i in range(-4, -1):
+    print(b[i])
+
+#리스트에 추가 삭제
+b.append(1)
+for i in range(len(b)):
+    print(b[i], end=' ')
+print()
+del b[-1]
+for i in range(len(b)):
+    print(b[i], end=' ')
