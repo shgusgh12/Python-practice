@@ -1,3 +1,6 @@
+from operator import concat
+
+
 a = 100, 5 , 'k'
 print('"더이상 카레먹기 싫어요"')
 #is 연산자 
@@ -74,3 +77,38 @@ print()
 del b[-1]
 for i in range(len(b)):
     print(b[i], end=' ')
+print()
+
+# #리스트 병합  더하기 연산자 튜플도 가능
+# a = [0,1,2,3,4]
+# b = [5,6,7,8,9] 
+# print(a*3)
+
+# animals = ['elephant', 'hippo','lion','tiger','alligator']
+# name = input('동물의 이름을 입력하시오 ')
+# index = animals.index(name)
+# print(f'{name} 동물의 케이지는 {index}번 위치에 있습니다')
+
+#중복 제거
+lst = [1,2,3,4,6,7,7,7]
+lst2 = set(lst)
+lst3 = list(lst2)
+print(lst3, type(lst3))
+
+#list comprehension
+b = []
+for i in range(1,11):
+    b.append(i)
+
+c = [i*i for i in range(1,11)]
+print(c)
+c = [i*i for i in range(1,11)if i!= 5]
+print(c)
+c = [i for i in range(1,51)if i%2 != 0]
+print(c)
+
+def func(i):
+    i = i*2
+    return i
+c = [func(i) for i in [1,2,3,4,5]]
+print(c)
