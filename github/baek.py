@@ -1,14 +1,11 @@
 
+while True:
+    n = input()
+    if n == '0':
+        break
+    if n==n[::-1]:
+        print('yes')
+    else:
+        print('no')
 
-n , k = map(int,input().split())
-def fact(a):
-    if a==0:
-        return 1
-    if a == 1 :
-        return 1
-    else :
-        return a * fact(a-1)
-
-sum = fact(n)//(fact(n-k)*fact(k))  
-print(sum)
 
