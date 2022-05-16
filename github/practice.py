@@ -1,4 +1,6 @@
+from email.quoprimime import body_check
 from operator import concat
+from winreg import HKEY_CURRENT_CONFIG
 
 
 a = 100, 5 , 'k'
@@ -112,3 +114,45 @@ def func(i):
     return i
 c = [func(i) for i in [1,2,3,4,5]]
 print(c)
+
+#중첩 반복문 튜플로 묶어라 하나의 값은 안묶어도 된다
+a = [(i, j) for i in range(1,3) for j in range(1,10)]
+print(a)
+
+#딕셔너리 인덱스 접근 불가능
+b = {}
+b['id'] ='hong'
+b['id'] = 'kim' #나중에 들어온 key값으로 대체됨
+b['name']= '홍길동'
+b['age'] = 20
+b['address'] = (1,4,2,4) #리스트도 가능
+print(b)
+#key값만 출력
+for i in b.keys(  ):
+    print(i, end=' ')
+print()
+#value만 출력
+for i in b.values():
+    print(i, end=' ')
+print()
+#key, value 모두 출력 ====> tuple로 묶인다
+for i in b.items():
+    print(i , type(i))
+#key가 인덱스의 역할을 한다
+print(b['id'])
+#중첩 dictionary
+b2 = {
+    'name' : 'jake',
+    'age' : 30,
+    'pastime' : {
+        'reading': 30,
+        'walking': 60
+    }
+}
+print(b2['pastime']['walking'])
+#삽입 
+b2['age'] = 30
+print(b2['age'])
+#삭제 
+del b2['age']
+print(b2)
