@@ -157,14 +157,24 @@ print(b2['age'])
 del b2['age']
 print(b2)
 
-print('이름을 입력하세요: ', end='')
-name = input()
-print(f'안녕하세요? {name}님')
+# print('이름을 입력하세요: ', end='')
+# name = input()
+# print(f'안녕하세요? {name}님')
 
-n = int(input())
-i = 1
-sum = 0
-while i <= n:
-    sum += i
-    i = i+1
+# n = int(input())
+# i = 1
+# sum = 0
+# while i <= n:
+#     sum += i
+#     i = i+1
 
+#튜플 언패킹
+fruits = ('apple','banana','grapes')
+(mine, *yours)= fruits
+print(yours) #yours는 list 형태로 저장된다
+#중복허용 안하면서 순서가 중요한경우 set사용 못할때
+mylist = ['a','b','c','c','c']
+dic = dict.fromkeys(mylist) #value 값들은 전부 none으로 표시됨
+print(dic)
+mylist = list(dic)
+print (mylist)
