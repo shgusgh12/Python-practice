@@ -1,10 +1,13 @@
 def card_conv(x:int, r:int) -> str:
     d= ''
     dchar = '0123456789ABCDEFGHIJKLMNOP'
+    n = len(str(x))
+
+    print(f'{r:2}| {x:{n}d}')
 
     while x>0:
         d+=dchar[x%r]
-        x //= r
+        x //= r 
 
     return d[::-1]
 
