@@ -45,7 +45,7 @@ for _ in range(n):
     elif x[0] == 'pop_front':
         if len(d) == 0:
             print(-1)
-        else:
+        else: 
             print(d.popleft())
     elif x[0] == 'pop_back':
         if len(d) == 0:
