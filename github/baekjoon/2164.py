@@ -1,13 +1,12 @@
-from queue import Queue
+from collections import deque
 N = int(input())
-que = Queue()
+d = deque()
 for i in range(1, N+1):
-    que.put(i)
-while que.qsize() != 1:
-    que.get()
-    que.put(que.get())
-    que.get()
-print(que[0])
+    d.append(i)
+while len(d) != 1:
+    d.popleft()
+    d.append(d.popleft())    
+print(d[0])
 
 
 
