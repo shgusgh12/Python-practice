@@ -1,11 +1,25 @@
-def change(lst, idx, val):
-    lst[idx] = val
+counter = 0
+ptr = 0
+prime= [None]* 500
 
-x = [11, 22, 33, 44, 55]
-print('x =', x)
+prime[ptr] = 2
+ptr += 1
 
-index = int(input())
-value = int(input())
+prime[ptr] = 3
+ptr += 1
 
-change(x, index, value)
-print(f'x = {x}')
+for n in range(5, 1001, 2):
+    i =1 
+    while prime[i] * prime[i] <=n:
+        counter += 2
+        if n % prime[i] == 0:
+            break
+        i += 1
+    else:
+        prime[ptr] = n
+        ptr += 1
+        counter += 1
+
+for i in range(ptr):
+    print(prime[i])
+print(f'곱셈과 나눗셈 횟수 : {counter}')
