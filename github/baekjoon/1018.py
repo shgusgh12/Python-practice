@@ -1,3 +1,5 @@
+#다시 풀기
+
 N, M = map(int, input().split())
 arr = []
 count = []
