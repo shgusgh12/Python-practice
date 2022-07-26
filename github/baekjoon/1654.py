@@ -3,7 +3,7 @@ k , N = map(int, input().split(' '))
 arr = []
 for i in range(k):
     arr.append(int(input()))
-start = 0
+start = 1
 x = 0
 min = 0
 for i in range(k):
@@ -11,15 +11,15 @@ for i in range(k):
         min = arr[i]
 end = min
 sum = 0
-while start +1 < end:
+while start <= end:
     mid = (start + end) // 2
     
     for i in range(k):
         if arr[i] >= mid:
             sum += arr[i] // mid 
     if sum >= N:
-        start = mid
+        start = mid +1
     else:
-        end = mid
+        end = mid -1
     sum = 0
-print (start)
+print (end)
