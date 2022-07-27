@@ -6,7 +6,7 @@ cnt = 0
 
 for i in range(T):
     N, M  = map(int, input().split(' '))
-    imp = list(map(int, input().split(' ')))
+    imp = list(map(int, input().split(' '))) #한줄에 여러개 입력받아 리스트 생성
     idx = list(i for i in range(len(imp)))
     idx[M] = 'target'
 
