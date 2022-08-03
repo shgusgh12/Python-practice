@@ -1,36 +1,23 @@
 #블록 넣으면 2초 블록 꺼내서 놓으면 1초 블록은 1
-
-N, M, B = map(int, input().split(' '))
-arr = []
-arr2 = [] 
-for i in range(N):
-    arr2 = map(int, input().split(' '))
-    arr2 = list(arr2)
-    arr.append([arr2])
-val = min(map(min, arr))
-min_val = min(val)
-maxval = max(map(max, arr))
-max_val = max(maxval)
-tmp = min_val
-answer = []
-while True:
-    T = 0 #블록을 인벤으로 
-    a = 0 #인벤에서 밖으러
+import sys
+input = sys.stdin.readline 
+N, M, B = map(int, input().split())
+arr = [list(map(int, input().split())) for _ in range(N)]
+ans = 10000000000
+height = 0
+for k in range(257):
+    max = 0
+    min = 0
     for i in range(N):
         for j in range(M):
-            if arr[i][j] >= tmp:
-                T += arr[i][j] - tmp
-                B += arr[i][j] - tmp
-            elif arr[i][j] < tmp:
-                a += tmp - arr[i][j]
-                B -= tmp - arr[i][j]
-    if B > 0 :
-        answer.append(T*2 + a)     
-    
-
-
-
-            
-                
-            
-    
+            if arr[i][j] >= k:
+                max += arr[i][j] - k
+            else:
+                min += k - arr[i][j]
+    if max + B < min:
+        continue
+    T = max * 2 + min
+    if T <= ans:
+        ans = T
+        height = k
+print(ans , height)
