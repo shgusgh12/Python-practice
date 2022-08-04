@@ -13,3 +13,31 @@ def selectMenu() -> Menu:
             return Menu(n)
 
 hash= ChainedHash(13)
+
+while True :
+    menu = selectMenu()
+
+    if menu == Menu.추가 :
+        key = int(input('추가할 키를 입력하세요.: '))
+        val = input('추가할 값을 입력하세요: ')
+        if not hash.add(key, val):
+            print('추가를 실패했습니다!')
+        
+    elif menu == Menu.삭제:
+        key = int(input('삭제할 키를 입력하세요: '))
+        if not hash.remove(key):
+            print('실패')
+    elif menu == Menu.검색:
+        key = int(input('검색할 키를 입력하세요: '))
+        t = hash.search(key)
+        if t is not None:
+            print(f'검색한 키를 갖는 값은 {t}입니다')
+        else:
+            print('실패')
+
+    elif menu == Menu.덤프:
+        hash.dump()
+    else :
+        break
+
+    
