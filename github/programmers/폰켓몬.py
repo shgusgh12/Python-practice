@@ -10,3 +10,8 @@ def solution(nums):
         answer = take
       
     return answer
+
+
+#간결하게 생각해보자
+def solution(ls):
+    return min(len(ls)/2, len(set(ls)))
