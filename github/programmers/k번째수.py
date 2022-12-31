@@ -6,7 +6,8 @@ def solution(array, commands):
     answer = []
     arr =[]
     c_length = len(commands)
-    for i in range(len(commands)):
+    #2차원배열 1차원배열로
+    for command in commands:
         for j in range(commands[i][1]-commands[i][0]+1):
             arr.append(array[j+1])
             arr.sort()
