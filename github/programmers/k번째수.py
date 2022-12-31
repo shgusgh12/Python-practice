@@ -1,5 +1,7 @@
 
 #개선 필요
+#2차원 배열 구조 생각하기 
+#효율성 체크 필요
 def solution(array, commands):
     answer = []
     arr =[]
