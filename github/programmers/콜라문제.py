@@ -3,8 +3,8 @@ def solution(a, b, n):
     answer = 0
     while n >= a:
         #20 2(나머지)+6(몫) 2+2 1+1 
-        div = n // a
-        r = n % a
+        div = n // a * b
+        r = n % a 
         answer += div
         n = r + div
         
