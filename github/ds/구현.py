@@ -26,6 +26,7 @@ for i in move:
     x, y = nx, ny
 print(nx,ny)      
 
+# if else문 대신 for문으로 간단하게 
 # move_type = ['R','U','L','D']
 # for i in move:
 #     for j in range(len(move_type)):
