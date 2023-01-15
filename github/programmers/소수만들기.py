@@ -1,27 +1,25 @@
 #수정필요
 #에라토스테네스의 체
 
+import math
 def solution(nums):
-    even= []
-    odd = []
-    sum = []
     ans = []
-    
+    answer = 0
     for i in range(len(nums)):
-        if nums[i] % 2 != 0:
-            odd.append(nums[i])
-        else:
-            even.append(nums[i])
-            
-    for i in range(len(even)):
-        for j in range(len(even)):
-            if i != j:
-                sum.append(even[i] + even[j])
-    for i in range(len(sum)):
-        for j in range(len(odd)):
-            ans.append(sum[i]+odd[j])
-    cnt = 0
-    arr = [True for i in range(len(ans)+1)]
-    m = int(math.sqrt(len(ans))) + 1
+        for j in range(i+1,len(nums)):
+            for k in range(j+1 , len(nums)):
+                ans.append(nums[i] + nums[j] + nums[k])
+    maxid = max(ans)
+    arr = [True] * (maxid + 1)
+    m = int(math.sqrt(maxid)) + 1
+    
+    for i in range(2,m):
+        if arr[i] == True:
+            for j in range(2*i, maxid+1, i):
+                arr[j] = False
+    for j in range(len(ans)):
+        if arr[ans[j]] == True:
+            answer += 1
+    
 
     return answer
