@@ -1,11 +1,13 @@
 n,m = map(int, input().split())
 a,b,d = map(int, input().split())
-
+# 체크한 땅 표시
 ground = [[0] * m for _ in range(n)]
-ground[a][b] = 1
+ground[a][b] = 1 
 arr = []
+#입력받은 땅 구조
 for i in range(n):
     arr.append(list(map(int, input().split())))
+
 
 nx = [-1, 0, 1, 0]
 ny = [0, 1, 0, -1]
