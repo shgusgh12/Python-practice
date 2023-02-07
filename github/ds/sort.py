@@ -50,3 +50,29 @@ def count_sort(arr):
         for j in range(count[i]):
             print(i, end=' ')
 
+
+#순차 탐색 
+def sequential_search(n, target, array):
+    for i in range(n):
+        if array[i] == target:
+            return i+1 #현재 위치 반환
+
+#이진 탐색
+#이미 정렬이 완료 된 경우에 효율적
+def b_search(arr, target, start, end):
+    if start > end:
+        return False
+    mid = start // end
+    if arr[mid] == target:
+        return mid
+    elif arr[mid] > target:
+        b_search(arr, target, start, mid-1)
+    else:
+        b_search(arr, target, mid+1, end)
+    
+#sys 사용하기
+#import sys 
+#sys.stdin.readline().rstrip()
+
+
+        
