@@ -30,7 +30,7 @@ if stack:
     print(0)
 else:
     print(answer)
-    
+# 스택
     
 
 
