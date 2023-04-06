@@ -1,5 +1,5 @@
 import FinanceDataReader as fdr
-
+import sys
 
 def MaxCrossing(arr, low, mid, high):
     maxleft = 0
@@ -37,11 +37,11 @@ def MaxSubarray(arr, low, high):
         else:
             return crosslow, crosshigh, crosssum
 
-company = input('회사이름을 입력하세요: ')
-start = input('시작년도 또는 날짜를 입력하세요: ')
-end = input('마지막년도 또는 날짜를 입력하세요: ')
+company = sys.argv[1]
+start = sys.argv[2]
+end = sys.argv[3]
 
-df = fdr.DataReader(company, start, end) #주말 빼고 40일
+df = fdr.DataReader(company, start, end) 
 
 dates = df.index.tolist()
 
