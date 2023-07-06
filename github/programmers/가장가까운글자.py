@@ -8,5 +8,5 @@ def solution(s):
             if i != j and j > i:
                 if arr[i] == arr[j]:
                     answer[j] = j - i
-                
+    print('test')
     return answer
